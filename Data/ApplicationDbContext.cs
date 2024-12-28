@@ -11,7 +11,7 @@ public class ApplicationDbContext : IdentityDbContext
     {
 
     }
-    public DbSet<Clinic> clinicTable { get; set; } // 
-    //public DbSet<Doctor> DoctorTable { get; set; } // 
+    public DbSet<Clinic> Clinics { get; set; }  
+    public DbSet<Doctor> Doctors { get; set; } 
 }
 

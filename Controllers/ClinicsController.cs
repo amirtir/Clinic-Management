@@ -37,7 +37,7 @@ namespace dashbord.Controllers
         }
         public IActionResult Index()
         {
-            var clinicList = _dbContext.clinicTable.ToList();
+            var clinicList = _dbContext.Clinics.ToList();
             return View(clinicList);
         }
       
@@ -53,7 +53,7 @@ namespace dashbord.Controllers
         {
             try
             {
-                _dbContext.clinicTable.Add(cln);
+                _dbContext.Clinics.Add(cln);
                 _dbContext.SaveChanges();
                  return RedirectToAction(nameof(DoneCreat));
 
@@ -67,7 +67,7 @@ namespace dashbord.Controllers
             }
             //if (ModelState.IsValid)
             //{
-            //    _dbContext.clinicTable.Add(cln);
+            //    _dbContext.Clinics.Add(cln);
             //    _dbContext.SaveChanges();
             //}
             //else {
@@ -82,7 +82,7 @@ namespace dashbord.Controllers
 
         public IActionResult Edit(int Id)
         {
-            var item = _dbContext.clinicTable.Find(Id);
+            var item = _dbContext.Clinics.Find(Id);
             if (item == null)
             {
                 return NotFound();
@@ -102,7 +102,7 @@ namespace dashbord.Controllers
                 if (Id != cl2.Id ) { return NotFound(); }
                 else
                 {
-                    _dbContext.clinicTable.Update(cl2);
+                    _dbContext.Clinics.Update(cl2);
                     _dbContext.SaveChanges();
                     return RedirectToAction(nameof(DoneEdit));
                 }
@@ -129,9 +129,10 @@ namespace dashbord.Controllers
 
         }
 
+        [HttpPost]
         public IActionResult Delete(int Id)
         {
-            var clin_item = _dbContext.clinicTable.Find(Id);
+            var clin_item = _dbContext.Clinics.Find(Id);
             if (clin_item == null)
             {
                 return NotFound();
@@ -149,7 +150,7 @@ namespace dashbord.Controllers
                 if (dclin == null) { return NotFound(); }
                 else
                 {
-                    _dbContext.clinicTable.Remove(dclin);
+                    _dbContext.Clinics.Remove(dclin);
                     _dbContext.SaveChanges();
                     return RedirectToAction(nameof(DoneDelet));
                 }
@@ -165,7 +166,7 @@ namespace dashbord.Controllers
             //}
             //else
             //{
-            //    _dbContext.clinicTable.Remove(dclin);
+            //    _dbContext.Clinics.Remove(dclin);
             //    _dbContext.SaveChanges();
             //}
             //return RedirectToAction(nameof(DoneDelet));

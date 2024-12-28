@@ -17,7 +17,7 @@ namespace dashbord.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.12")
+                .HasAnnotation("ProductVersion", "8.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -252,7 +252,7 @@ namespace dashbord.Migrations
 
                     b.HasIndex("doctorId");
 
-                    b.ToTable("clinicTable");
+                    b.ToTable("Clinics");
                 });
 
             modelBuilder.Entity("dashbord.Models.Doctor", b =>
@@ -263,12 +263,17 @@ namespace dashbord.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("doctorId"));
 
-                    b.Property<string>("docSpecialization")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("fName")
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("docSpecialization")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -277,23 +282,13 @@ namespace dashbord.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<string>("lName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("mName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<decimal>("phone")
                         .HasMaxLength(10)
                         .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("doctorId");
 
-                    b.ToTable("DoctorTable");
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

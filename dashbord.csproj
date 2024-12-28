@@ -5,20 +5,21 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-dashbord-ecc98a02-4342-426e-867c-c1f622ef0fbf</UserSecretsId>
+    <LangVersion>10</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.11" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.11" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.11" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 <PrivateAssets>all</PrivateAssets>
 </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
     <PackageReference Include="ClosedXML" Version="0.102.1" />
   </ItemGroup>
 
@@ -26,9 +27,66 @@
     <None Remove="Views\Clinics\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Clinics\" />
+    <Content Remove="Views\Clinics\Clinics.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="Views\Clinics\Clinics.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clinics\Creat.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clinics\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clinics\DoneCreat.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clinics\DoneDelet.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clinics\DoneEdit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clinics\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Clinics\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Doctor\Creat.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Doctor\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Doctor\DoneCreatD.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Doctor\DoneDeletD.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Doctor\DoneEditD.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Doctor\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Doctor\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Doctors.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\medicalInfo.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Medicines.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\MyPatients.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Patients.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Settings.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_LoginPartial.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="Migrations\Views\Clinics\Creat.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Clinics\Delete.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Clinics\DoneCreat.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Clinics\DoneDelet.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Clinics\DoneEdit.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Clinics\Edit.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Clinics\Index.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Doctor\Creat.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Doctor\Delete.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Doctor\DoneCreatD.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Doctor\DoneDeletD.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Doctor\DoneEditD.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Doctor\Edit.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Doctor\Index.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Home\Doctors.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Home\Index.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Home\medicalInfo.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Home\Medicines.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Home\MyPatients.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Home\Patients.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Home\Privacy.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Home\Settings.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Shared\Error.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Shared\_Layout.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Shared\_LoginPartial.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\_ViewImports.cshtml" />
+    <AdditionalFiles Include="Migrations\Views\_ViewStart.cshtml" />
   </ItemGroup>
 </Project>
