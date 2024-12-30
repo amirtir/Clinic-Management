@@ -69,7 +69,7 @@ namespace dashbord.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         [ValidateAntiForgeryToken]
         public IActionResult Creat(Clinic cln)
         {
@@ -153,7 +153,8 @@ namespace dashbord.Controllers
 
         }
 
-        [HttpPost]
+        [HttpGet]
+       
         public IActionResult Delete(int Id)
         {
             var clin_item = _dbContext.Clinics.Find(Id);
@@ -169,6 +170,7 @@ namespace dashbord.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int Id, Clinic dclin)
         {
+            dclin = _dbContext.Clinics.Find(Id);
             try
             {
                 if (dclin == null) { return NotFound(); }
