@@ -21,7 +21,7 @@ namespace dashbord.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            //var doctorList = _dbContext.clinicTable.ToList();
+            
             return View();
         }
 
@@ -40,9 +40,24 @@ namespace dashbord.Controllers
             return View();
         }
 
-        public IActionResult Creat()
+        public IActionResult Create()
         {
             return View();
+        }
+
+        public IActionResult Edit()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IActionResult MyPatients()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IActionResult Delete()
+        {
+            throw new NotImplementedException();
         }
     }
 }

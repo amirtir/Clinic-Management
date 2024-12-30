@@ -226,13 +226,13 @@ namespace dashbord.Migrations
 
             modelBuilder.Entity("dashbord.Models.Clinic", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ClinicId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClinicId"));
 
-                    b.Property<int>("doctorId")
+                    b.Property<int?>("doctorId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("namberRoom")
@@ -248,7 +248,7 @@ namespace dashbord.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ClinicId");
 
                     b.HasIndex("doctorId");
 
@@ -278,13 +278,14 @@ namespace dashbord.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<decimal>("idNumber")
-                        .HasMaxLength(10)
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<string>("idNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("phone")
-                        .HasMaxLength(10)
-                        .HasColumnType("decimal(18, 2)");
+                    b.Property<string>("phone")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
 
                     b.HasKey("doctorId");
 
@@ -367,9 +368,7 @@ namespace dashbord.Migrations
                 {
                     b.HasOne("dashbord.Models.Doctor", "doctor")
                         .WithMany()
-                        .HasForeignKey("doctorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("doctorId");
 
                     b.Navigation("doctor");
                 });

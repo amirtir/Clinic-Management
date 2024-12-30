@@ -30,13 +30,13 @@
                         @foreach (var Clinic in Model)
                         {
                         <tr>
-                            <td>@Clinic.Id</td>
+                            <td>@Clinic.ClinicId</td>
                             <td>@Clinic.nameClinic</td>
                             <td>@Clinic.namberRoom</td>
                             <td>@Clinic.nurse</td>
-                            <td><a asp-action="Edit" asp-route-id="@Clinic.Id" class="btn btn-success">
+                            <td><a asp-action="Edit" asp-route-id="@Clinic.ClinicId" class="btn btn-success">
                                     <i class="fa-regular fa-pen"></i></a> |
-                                <a asp-action="Delete" asp-route-id="@Clinic.Id" class="btn btn-danger">
+                                <a asp-action="Delete" asp-route-id="@Clinic.ClinicId" class="btn btn-danger">
                                     <i class="fa-solid fa-xmark"></i></a></td>
 
                         </tr>

@@ -1,0 +1,23 @@
+[33mcommit cae07727f104db4c2487f3cf3fdd9a16d54689d7[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: amirtir <amirtir33@gmail.comgit config --global user.name amirtir33@gmail.comgit config --global user.email amirtir33@gmail.com>
+Date:   Sat Dec 28 23:05:51 2024 +0330
+
+    Changes For Upgrading
+
+[33mcommit 9c3ca5ca5884007167bd649faca9288f83e19f59[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: amirtir <amirtir33@gmail.comgit config --global user.name amirtir33@gmail.comgit config --global user.email amirtir33@gmail.com>
+Date:   Sat Dec 28 22:57:27 2024 +0330
+
+    Create User Model
+
+[33mcommit b376250b11a582f56af77e8571b7a94ff110f82a[m
+Author: amirtir <amirtir33@gmail.comgit config --global user.name amirtir33@gmail.comgit config --global user.email amirtir33@gmail.com>
+Date:   Sat Dec 28 22:28:21 2024 +0330
+
+    Make Changes and Upgrade Packages and Make Doctors Table
+
+[33mcommit 8a9dfeced69eb72975e89042d80be07e73273458[m
+Author: amirtir <amirtir33@gmail.comgit config --global user.name amirtir33@gmail.comgit config --global user.email amirtir33@gmail.com>
+Date:   Sat Dec 28 20:03:12 2024 +0330
+
+    Upgrade to .net 8

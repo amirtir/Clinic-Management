@@ -1,7 +1,9 @@
 ﻿
+@using dashbord.Models.ViewModels
 @model dashbord.Models.Clinic;
-
-
+@{
+    var doctorlist = ViewBag.model as DoctorViewModel;
+}
 <div class="row">
     <div class="col-md-4">
         <h1>Add Clinic</h1>
@@ -11,8 +13,11 @@
             {
                 <h5 class="alert alert-danger">@ViewBag.Message</h5>
             }
-            <div asp-validation-summary="ModelOnly " class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+            
+           
+            
             <div class="form-group">
                 <label asp-for="nameClinic" class="control-label">Name Clinic</label>
                 <input asp-for="nameClinic" type="text" class="form-control"  />
@@ -31,7 +36,25 @@
                 <span asp-validation-for="nurse" class="text-danger"></span>
 
             </div>
+            
+            
+             <div class=" form-group">
+                            <label asp-for="doctor" class="control-label">Doctor </label>
+                 <select  asp-for="doctor"   name="doctor"  asp-items="doctorlist.DoctorsListItems" >
+                     
+                     <option > Select a Doctor</option>
+                   
+                
+                 </select>
+                            <span asp-validation-for="doctorId" class="text-danger"></span>
+            
+                        </div>
+            
             <br />
+            
+            
+            
+            
 
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-info" />
