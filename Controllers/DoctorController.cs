@@ -21,8 +21,8 @@ namespace dashbord.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            
-            return View();
+            var list = _dbContext.Doctors.ToList();
+            return View(list);
         }
 
         public IActionResult DoneCreatD()
@@ -40,11 +40,37 @@ namespace dashbord.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Create(Doctor doctor)
+        {
+            if (ModelState.IsValid == true)
+            {
 
+                try
+                {
+                    _dbContext.Doctors.Add(doctor);
+                    _dbContext.SaveChanges();
+                    return RedirectToAction(nameof(DoneCreatD));
+                }
+                catch 
+                {
+                    ModelState.AddModelError("", "You have to fill all the required fields ");
+                    return View();
+                }
+             
+            }
+            else
+            {
+                ModelState.AddModelError("", "You have to fill all the required fields ");
+                return View();
+            }
+         
+        }
         public IActionResult Edit()
         {
             throw new NotImplementedException();

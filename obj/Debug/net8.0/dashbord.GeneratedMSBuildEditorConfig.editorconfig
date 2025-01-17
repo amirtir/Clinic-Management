@@ -142,20 +142,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pc/Desktop/Clinic-Management-main/Views/Clinics/Creat.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljc1xDcmVhdC5jc2h0bWw=
+[C:/Users/pc/Desktop/Clinic-Management-main/Views/Clinics/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pc/Desktop/Clinic-Management-main/Views/Clinics/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pc/Desktop/Clinic-Management-main/Views/Clinics/DoneCreat.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljc1xEb25lQ3JlYXQuY3NodG1s
+[C:/Users/pc/Desktop/Clinic-Management-main/Views/Clinics/DoneCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljc1xEb25lQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pc/Desktop/Clinic-Management-main/Views/Clinics/DoneDelet.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljc1xEb25lRGVsZXQuY3NodG1s
+[C:/Users/pc/Desktop/Clinic-Management-main/Views/Clinics/DoneDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbmljc1xEb25lRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pc/Desktop/Clinic-Management-main/Views/Clinics/DoneEdit.cshtml]

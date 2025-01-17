@@ -25,7 +25,7 @@ namespace dashbord.Controllers
         }
         // GET: /<controller>/
 
-        public IActionResult DoneCreat()
+        public IActionResult DoneCreate()
         {
             return View();
         }
@@ -44,9 +44,9 @@ namespace dashbord.Controllers
             var clinicList = _dbContext.Clinics.ToList();
             return View(clinicList);
         }
-      
 
-        public IActionResult Creat()
+        [HttpGet]
+        public IActionResult Create()
         {
             var doctorlist = _dbContext.Doctors.ToList();
 
@@ -69,9 +69,9 @@ namespace dashbord.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Creat(Clinic cln)
+        public IActionResult Create(Clinic cln)
         {
             
            
@@ -79,7 +79,7 @@ namespace dashbord.Controllers
             {
                 _dbContext.Clinics.Add(cln);
                 _dbContext.SaveChanges();
-                 return RedirectToAction(nameof(DoneCreat));
+                 return RedirectToAction(nameof(DoneCreate));
 
                 
             }
@@ -98,7 +98,7 @@ namespace dashbord.Controllers
             //    ModelState.AddModelError("", "You have to fill all the required fields ");
             //}
             ////return View();
-            //return RedirectToAction(nameof(DoneCreat));
+            //return RedirectToAction(nameof(DoneCreate));
 
 
 
