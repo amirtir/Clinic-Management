@@ -46,7 +46,7 @@
                                             
                                               <td>
                                                   <a asp-action="MyPatients" class="btn btn-secondary">Patients</a>
-                                                  <a asp-controller="Doctor" asp-action="Edit" class="btn btn-success">
+                                                  <a asp-controller="Doctor" asp-action="Edit"  asp-route-doctorid="@doctor.doctorId"  class="btn btn-success">
                                                       <i class="fa-regular fa-pen"></i>
                                                   </a> |
                                                   <a asp-controller="Doctor" asp-action="Delete" class="btn btn-danger">

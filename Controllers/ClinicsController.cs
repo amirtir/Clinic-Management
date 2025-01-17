@@ -35,10 +35,11 @@ namespace dashbord.Controllers
             return View();
         }
         
-        public IActionResult DoneDelet()
+        public IActionResult DoneDelete()
         {
             return View();
         }
+[Route("Clinics")]
         public IActionResult Index()
         {
             var clinicList = _dbContext.Clinics.ToList();
@@ -46,6 +47,7 @@ namespace dashbord.Controllers
         }
 
         [HttpGet]
+        [Route("Clinics/Create")]
         public IActionResult Create()
         {
             var doctorlist = _dbContext.Doctors.ToList();
@@ -71,23 +73,19 @@ namespace dashbord.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("Clinics/Create")]
         public IActionResult Create(Clinic cln)
         {
-            
-           
             try
             {
                 _dbContext.Clinics.Add(cln);
                 _dbContext.SaveChanges();
                  return RedirectToAction(nameof(DoneCreate));
-
-                
             }
             catch
             {
                 ModelState.AddModelError("", "You have to fill all the required fields ");
                 return View();
-
             }
             //if (ModelState.IsValid)
             //{
@@ -103,7 +101,7 @@ namespace dashbord.Controllers
 
 
         }
-
+[Route("Clinics/Edit/{id}")]
         public IActionResult Edit(int Id)
         {
             var item = _dbContext.Clinics.Find(Id);
@@ -116,7 +114,7 @@ namespace dashbord.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-
+[Route("clinics/Edit/{id}")]
         public IActionResult Edit(int Id, Clinic cl2)
         {
             try
@@ -154,7 +152,7 @@ namespace dashbord.Controllers
         }
 
         [HttpGet]
-       
+       [Route("Clinics/Delete/{id}")]
         public IActionResult Delete(int Id)
         {
             var clin_item = _dbContext.Clinics.Find(Id);
@@ -168,6 +166,7 @@ namespace dashbord.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("clinics/Delete/{id}")]
         public IActionResult Delete(int Id, Clinic dclin)
         {
             dclin = _dbContext.Clinics.Find(Id);
@@ -178,7 +177,7 @@ namespace dashbord.Controllers
                 {
                     _dbContext.Clinics.Remove(dclin);
                     _dbContext.SaveChanges();
-                    return RedirectToAction(nameof(DoneDelet));
+                    return RedirectToAction(nameof(DoneDelete));
                 }
             }
             catch

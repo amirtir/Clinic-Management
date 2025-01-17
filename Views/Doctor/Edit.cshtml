@@ -1,5 +1,5 @@
 ﻿
-@model dashbord.Models.Clinic;
+@model dashbord.Models.Doctor;
 
 
 <div class="row">
@@ -14,25 +14,38 @@
             <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"> </div>
 
             <div class="form-group">
-                <label asp-for="ClinicId" class="control-label"></label>
-                <input asp-for="ClinicId" class="form-control" readonly />
+                <label asp-for="doctorId" class="control-label"></label>
+                <input asp-for="doctorId" class="form-control" readonly />
             </div>
 
             <div class="form-group">
                 <label class="control-label">Name Clinic</label>
-                <input asp-for="nameClinic" type="text" class="form-control" required />
-                <span asp-validation-for="nameClinic" class="text-danger"></span>
+                <input asp-for="FirstName" type="text" class="form-control" required />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Namber Room</label>
-                <input asp-for="namberRoom" type="text" class="form-control" required />
-                <span asp-validation-for="namberRoom" class="text-danger"></span>
+                <input asp-for="LastName" type="text" class="form-control" required />
+                <span asp-validation-for="LastName" class="text-danger"></span>
 
             </div>
             <div class="form-group">
                 <label class="control-label">Nurse </label>
-                <input asp-for="nurse" type="text" class="form-control" required />
-                <span asp-validation-for="nurse" class="text-danger"></span>
+                <input asp-for="idNumber" type="text" class="form-control" required />
+                <span asp-validation-for="idNumber" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nurse </label>
+                <input asp-for="phone" type="text" class="form-control" required />
+                <span asp-validation-for="phone" class="text-danger"></span>
+
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label">Nurse </label>
+                <input asp-for="docSpecialization" type="text" class="form-control" required />
+                <span asp-validation-for="docSpecialization" class="text-danger"></span>
 
             </div>
             <br />

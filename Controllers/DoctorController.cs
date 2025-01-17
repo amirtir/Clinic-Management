@@ -18,14 +18,16 @@ namespace dashbord.Controllers
         {
             _dbContext = dbContext;
         }
+
         // GET: /<controller>/
+[Route("Doctors")]
         public IActionResult Index()
         {
             var list = _dbContext.Doctors.ToList();
             return View(list);
         }
 
-        public IActionResult DoneCreatD()
+        public IActionResult DoneCreateD()
         {
             return View();
         }
@@ -35,47 +37,84 @@ namespace dashbord.Controllers
             return View();
         }
 
-        public IActionResult DoneDeletD()
+        public IActionResult DoneDeleteD()
         {
             return View();
         }
 
         [HttpGet]
+        [Route("Doctors/Create")]
         public IActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
+        [Route("Doctors/Create")]
         public IActionResult Create(Doctor doctor)
         {
             if (ModelState.IsValid == true)
             {
-
                 try
                 {
                     _dbContext.Doctors.Add(doctor);
                     _dbContext.SaveChanges();
-                    return RedirectToAction(nameof(DoneCreatD));
+                    return RedirectToAction(nameof(DoneCreateD));
                 }
-                catch 
+                catch
                 {
                     ModelState.AddModelError("", "You have to fill all the required fields ");
                     return View();
                 }
-             
             }
             else
             {
                 ModelState.AddModelError("", "You have to fill all the required fields ");
                 return View();
             }
-         
-        }
-        public IActionResult Edit()
-        {
-            throw new NotImplementedException();
         }
 
+        [HttpGet]
+       [Route("Doctors/Edit/{doctorid}")]
+        public IActionResult Edit(int doctorid)
+        {
+            var doctor= _dbContext.Doctors.Find(doctorid);
+            if (doctor == null)
+            {
+                return NotFound();
+            }
+            return View(doctor);
+        }
+
+        [HttpPost]
+        [Route("Doctors/Edit/{doctorid}")]
+        public IActionResult Edit(int doctorid,Doctor doctor)
+        {
+            if (ModelState.IsValid == true)
+            {
+
+                try
+                {
+                    _dbContext.Doctors.Update(doctor);
+                    _dbContext.SaveChanges();
+                    return RedirectToAction("DoneCreateD");
+
+                }
+                catch (Exception e)
+                {
+                    
+                    ModelState.AddModelError("", e.Message);
+                    return View();
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "You have to fill all the required fields ");
+                return View();
+            }
+            
+        }
+//ToDo: Make Methods
         public IActionResult MyPatients()
         {
             throw new NotImplementedException();
@@ -87,4 +126,3 @@ namespace dashbord.Controllers
         }
     }
 }
-
